@@ -428,7 +428,7 @@ export default function Tratamientos() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="modal-titulo"
-            className="relative bg-white rounded-3xl overflow-hidden w-full max-w-lg max-h-[90vh] overflow-y-auto"
+            className="relative bg-white rounded-3xl overflow-hidden w-full max-w-3xl max-h-[90vh] flex flex-col md:flex-row"
             style={{ boxShadow: '0 30px 80px rgba(0,88,188,0.3)' }}
             onClick={(e) => e.stopPropagation()}
           >
@@ -442,13 +442,15 @@ export default function Tratamientos() {
               <span className="material-symbols-outlined" style={{ fontSize: 20, color: '#0a1628' }}>close</span>
             </button>
 
+            {/* Imagen izquierda */}
             {activo.img && (
-              <div className="w-full h-80 flex items-center justify-center" style={{ background: '#ffffff' }}>
-                <img src={activo.img} alt={activo.titulo} loading="lazy" decoding="async" className="w-full h-full object-contain" />
+              <div className="relative w-full md:w-1/2 h-64 md:h-auto flex-shrink-0 overflow-hidden">
+                <img src={activo.img} alt={activo.titulo} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: activo.pos || 'center 25%' }} />
               </div>
             )}
 
-            <div className="p-7">
+            {/* Contenido derecha */}
+            <div className="w-full md:w-1/2 p-7 md:p-8 overflow-y-auto">
               <h3 id="modal-titulo" className="font-extrabold mb-3" style={{ fontSize: '1.4rem', fontFamily: 'Bricolage Grotesque, sans-serif', color: '#0a1628' }}>{activo.titulo}</h3>
               <p className="text-sm leading-relaxed mb-6" style={{ color: '#4a6080' }}>{activo.descripcion}</p>
 
