@@ -74,30 +74,30 @@ export default function Tratamientos() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-4 md:gap-6 lg:gap-8">
           {tratamientos.slice(0, 6).map((t) => (
             <Link
               key={t.title}
               to={`/tratamientos#${t.slug}`}
-              className="card rounded-3xl p-7 group flex flex-col"
+              className="card rounded-2xl md:rounded-3xl p-5 md:p-7 group flex flex-col"
               style={{ boxShadow: '0 10px 40px rgba(0,88,188,0.07)' }}
             >
               <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4"
+                className="w-11 h-11 md:w-14 md:h-14 rounded-xl md:rounded-2xl flex items-center justify-center mb-3 md:mb-4"
                 style={{ background: 'rgba(0,88,188,0.08)' }}
               >
-                <span className="material-symbols-outlined gradient-text" style={{ fontSize: 28 }}>{t.icon}</span>
+                <span className="material-symbols-outlined gradient-text" style={{ fontSize: 24 }}>{t.icon}</span>
               </div>
               <h3
                 className="font-extrabold mb-2 leading-tight"
-                style={{ fontSize: '1.65rem', fontFamily: 'Bricolage Grotesque, sans-serif', color: '#0a1628' }}
+                style={{ fontSize: 'clamp(1.1rem, 4.5vw, 1.65rem)', fontFamily: 'Bricolage Grotesque, sans-serif', color: '#0a1628' }}
               >
                 {t.title}
               </h3>
-              <p className="leading-relaxed mb-4" style={{ fontSize: '0.95rem', color: '#5b7290' }}>{t.desc}</p>
-              <span className="inline-flex items-center gap-1 font-semibold gradient-text mt-auto">
+              <p className="leading-relaxed mb-4 text-sm md:text-[0.95rem] line-clamp-2 md:line-clamp-none" style={{ color: '#5b7290' }}>{t.desc}</p>
+              <span className="inline-flex items-center gap-1 font-semibold gradient-text mt-auto text-sm md:text-base">
                 Ver más
-                <span className="material-symbols-outlined transition-transform group-hover:translate-x-1" style={{ fontSize: 18 }}>arrow_forward</span>
+                <span className="material-symbols-outlined transition-transform group-hover:translate-x-1" style={{ fontSize: 16 }}>arrow_forward</span>
               </span>
             </Link>
           ))}

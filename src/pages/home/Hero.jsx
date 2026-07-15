@@ -82,21 +82,21 @@ export default function Hero() {
 
             {/* Cifras */}
             <div
-              className="flex flex-wrap gap-10 mt-8 pt-8"
+              className="flex flex-wrap gap-x-8 gap-y-4 md:gap-10 mt-8 pt-8"
               style={{ borderTop: '1px solid rgba(0,88,188,0.12)' }}
             >
               {stats.map((s) => (
                 <div key={s.label}>
                   <div className="flex items-center gap-1.5">
-                    <span className="material-symbols-outlined" style={{ fontSize: 20, color: 'var(--g1)' }}>{s.icon}</span>
+                    <span className="material-symbols-outlined" style={{ fontSize: 18, color: 'var(--g1)' }}>{s.icon}</span>
                     <p
                       className="font-extrabold leading-none"
-                      style={{ fontSize: '2rem', fontFamily: 'Bricolage Grotesque, sans-serif', color: 'var(--g1)' }}
+                      style={{ fontSize: 'clamp(1.5rem, 6vw, 2rem)', fontFamily: 'Bricolage Grotesque, sans-serif', color: 'var(--g1)' }}
                     >
                       {s.value}
                     </p>
                   </div>
-                  <p className="text-xs font-semibold uppercase tracking-wider mt-1.5" style={{ color: '#5b7290' }}>
+                  <p className="text-[11px] md:text-xs font-semibold uppercase tracking-wider mt-1.5" style={{ color: '#5b7290' }}>
                     {s.label}
                   </p>
                 </div>

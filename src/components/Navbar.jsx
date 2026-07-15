@@ -67,15 +67,16 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* CTA desktop */}
+          {/* CTA */}
           <a
             href="https://wa.link/ijph4k"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary hidden md:inline-flex text-sm"
+            className="btn-primary inline-flex text-sm whitespace-nowrap ml-auto mr-2 md:ml-0 md:mr-0"
           >
             <span className="material-symbols-outlined" style={{ fontSize: 18 }}>calendar_month</span>
-            Agendar consulta
+            <span className="md:hidden">Agendar</span>
+            <span className="hidden md:inline">Agendar consulta</span>
           </a>
 
           {/* Hamburger */}
