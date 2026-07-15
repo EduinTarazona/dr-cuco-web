@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
+
+@import "tailwindcss";
+
+:root {
+  --g1: #0058bc;
+  --g2: #00daf1;
+  --gradient: linear-gradient(135deg, var(--g1), var(--g2));
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #eef4fb;
+  color: #0a1628;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+#root {
+  width: 100%;
+  min-height: 100svh;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}
+
+.gradient-text {
+  /* extremo cian más oscuro solo para texto → cumple contraste AA */
+  background: linear-gradient(135deg, var(--g1), #0091c7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Estados de foco visibles para navegación por teclado (WCAG 2.2 AA) */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--g1);
+  outline-offset: 2px;
+  border-radius: 12px;
+}
+
+.gradient-bg {
+  background: var(--gradient);
+}
+
+.btn-primary {
+  background: var(--gradient);
+  color: white;
+  padding: 0.75rem 1.75rem;
+  min-height: 44px;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--g1);
+  padding: 0.75rem 1.75rem;
+  min-height: 44px;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 2px solid var(--g1);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  background: var(--g1);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.card {
+  background: white;
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 24px rgba(0, 88, 188, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0, 88, 188, 0.14);
+}
+
+/* Tokens de ritmo vertical — una sola escala para toda la web */
+.section-pad { padding-top: 5rem; padding-bottom: 5rem; }        /* 80px */
+.section-pad-tight { padding-top: 3rem; padding-bottom: 3rem; }  /* 48px */
+@media (max-width: 768px) {
+  .section-pad { padding-top: 3.5rem; padding-bottom: 3.5rem; }  /* 56px */
+  .section-pad-tight { padding-top: 2.5rem; padding-bottom: 2.5rem; } /* 40px */
+}
+
+.section-title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  color: #0a1628;
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: #4a6080;
+  line-height: 1.7;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
