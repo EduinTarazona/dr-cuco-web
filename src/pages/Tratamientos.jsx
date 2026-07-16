@@ -114,7 +114,7 @@ const categorias = [
       {
         titulo: 'Tensado vaginal con Láser CO2 Fraccionado',
         img: imgLaserTensado,
-        pos: 'center 20%',
+        pos: '62% 20%',
         corta: 'Recupera firmeza y rejuvenecimiento íntimo con tecnología de Láser CO2 Fraccionado, mínimamente invasivo y con resultados naturales.',
         descripcion: 'El tensado vaginal con Láser CO2 Fraccionado estimula la producción natural de colágeno y favorece la regeneración de los tejidos, ayudando a mejorar la firmeza, hidratación y calidad de la mucosa vaginal. Una alternativa moderna para mujeres que desean mejorar su salud íntima sin cirugía.',
         beneficios: ['Ayuda a estimular colágeno y regeneración de tejidos', 'Mejora firmeza y tonicidad vaginal', 'Procedimiento mínimamente invasivo', 'Recuperación rápida y ambulatoria'],
@@ -173,6 +173,7 @@ const categorias = [
       {
         titulo: 'Láser CO2 para estrías en abdomen',
         img: imgEstrias,
+        pos: '64% 25%',
         corta: 'Mejora la apariencia de las estrías abdominales con Láser CO2 Fraccionado, estimulando la regeneración natural de la piel.',
         descripcion: 'El tratamiento con Láser CO2 Fraccionado para estrías abdominales estimula la regeneración y producción natural de colágeno, actuando de manera controlada sobre las capas de la piel y mejorando progresivamente el aspecto de las estrías. Se realiza de forma personalizada según el tipo de piel, profundidad de las estrías y necesidades de cada paciente.',
         beneficios: ['Estimula producción natural de colágeno', 'Favorece regeneración y renovación de la piel', 'Procedimiento mínimamente invasivo', 'Mejoría progresiva y natural de la piel'],
@@ -222,6 +223,7 @@ const categorias = [
       {
         titulo: 'Suero de Vitamina C',
         img: imgSueroC,
+        pos: '58% 25%',
         corta: 'Revitaliza tu cuerpo desde el interior con una terapia intravenosa que apoya defensas, energía y vitalidad.',
         descripcion: 'El suero de vitamina C es una terapia intravenosa diseñada para aportar bienestar, revitalización y apoyo integral al organismo mediante la administración controlada de vitamina C y otros componentes según las necesidades de cada paciente. Favorece una absorción rápida y eficiente de nutrientes, apoya el sistema inmune y se asocia al cuidado de la piel y a la producción natural de colágeno.',
         beneficios: ['Ayuda a apoyar bienestar y vitalidad', 'Puede favorecer fortalecimiento del sistema inmune', 'Apoyo antioxidante y bienestar integral'],
@@ -428,7 +430,7 @@ export default function Tratamientos() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="modal-titulo"
-            className="relative bg-white rounded-3xl overflow-hidden w-full max-w-3xl max-h-[90vh] flex flex-col md:flex-row"
+            className="relative bg-white rounded-3xl overflow-hidden w-full max-w-3xl max-h-[90vh] flex flex-row"
             style={{ boxShadow: '0 30px 80px rgba(0,88,188,0.3)' }}
             onClick={(e) => e.stopPropagation()}
           >
@@ -444,13 +446,13 @@ export default function Tratamientos() {
 
             {/* Imagen izquierda */}
             {activo.img && (
-              <div className="relative w-full md:w-1/2 h-64 md:h-auto flex-shrink-0 overflow-hidden">
+              <div className="relative w-2/5 flex-shrink-0 overflow-hidden">
                 <img src={activo.img} alt={activo.titulo} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: activo.pos || 'center 25%' }} />
               </div>
             )}
 
             {/* Contenido derecha */}
-            <div className="w-full md:w-1/2 p-7 md:p-8 overflow-y-auto">
+            <div className="w-3/5 p-5 md:p-8 overflow-y-auto">
               <h3 id="modal-titulo" className="font-extrabold mb-3" style={{ fontSize: '1.4rem', fontFamily: 'Bricolage Grotesque, sans-serif', color: '#0a1628' }}>{activo.titulo}</h3>
               <p className="text-sm leading-relaxed mb-6" style={{ color: '#4a6080' }}>{activo.descripcion}</p>
 
@@ -468,10 +470,10 @@ export default function Tratamientos() {
                 href="https://wa.link/ijph4k"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary w-full justify-center"
-                style={{ fontSize: '0.9rem' }}
+                className="btn-primary w-full justify-center whitespace-nowrap"
+                style={{ fontSize: '0.85rem' }}
               >
-                <span className="material-symbols-outlined" style={{ fontSize: 18 }}>calendar_month</span>
+                <span className="material-symbols-outlined" style={{ fontSize: 16 }}>calendar_month</span>
                 Agendar consulta
               </a>
             </div>
